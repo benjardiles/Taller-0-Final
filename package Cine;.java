@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 
 public class App {
+	
 	public static void LeerClientes(String[] NombreUser,String[]ApellidoUser,String[]Rut,String[]Password,int[]Credit) throws FileNotFoundException, IOException{
 		Scanner Arch = new Scanner(new File("clientes.txt"));
 		int x = 0;
@@ -34,14 +35,14 @@ public class App {
 			
 		}
 	
-	public static void LeerStatus(String[] Rut,String[]Estado) throws FileNotFoundException, IOException{
+	public static void LeerStatus(String[] RutStatus,String[]Estado) throws FileNotFoundException, IOException{
 		Scanner Arch2 = new Scanner(new File("status.txt"));
 		int y = 0;
 		while(Arch2.hasNextLine()) {
 			String linea = Arch2.nextLine();
 			String [] partes = linea.split(",");
 			String Ruts = partes[0];
-			Rut[y] = Ruts;
+			RutStatus[y] = Ruts;
 			String Estados = partes[1];
 			Estado[y] = Estados;
 			
@@ -80,8 +81,23 @@ public class App {
 			
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		String Peliculas[] = new String[999];
+		String tipos[] = new String[9999];
+		int recaudaciones[]= new int[9999];
+		String salas[]= new String[9999] ;
+		String funciones[]= new String[9999];
+		String RutStatus[]= new String[99];
+		String Estado[]= new String[99];
+		String NombreUser[]= new String[99];
+		String ApellidoUser[]= new String[99];
+		String Rut[]= new String[99];
+		String Password[]= new String[99];
+		String Credit[]= new String[99];
 
+		LeerPeliculas(Peliculas,tipos,salas,funciones,recaudaciones);
+		
 	
 		
 	
@@ -89,6 +105,3 @@ public class App {
 	}
 
 }
-
-    
-
